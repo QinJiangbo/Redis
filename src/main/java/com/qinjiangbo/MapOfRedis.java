@@ -23,6 +23,8 @@ public class MapOfRedis {
         // hash map get
         System.out.println(jedis.hmget("user", "name", "age"));
         System.out.println(jedis.hlen("user"));
+        System.out.println(jedis.hkeys("user"));
+        System.out.println(jedis.hvals("user"));
 
         // hash map delete
         jedis.hdel("user", "name", "age");
@@ -31,6 +33,8 @@ public class MapOfRedis {
         System.out.println(jedis.hmget("user", "name", "age"));
         System.out.println(jedis.hexists("user", "name"));
         System.out.println(jedis.hlen("user"));
+        System.out.println(jedis.hkeys("user"));
+        System.out.println(jedis.hvals("user"));
 
     }
 }
