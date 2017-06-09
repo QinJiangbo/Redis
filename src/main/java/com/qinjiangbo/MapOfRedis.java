@@ -3,6 +3,7 @@ package com.qinjiangbo;
 import redis.clients.jedis.Jedis;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -35,6 +36,12 @@ public class MapOfRedis {
         System.out.println(jedis.hlen("user"));
         System.out.println(jedis.hkeys("user"));
         System.out.println(jedis.hvals("user"));
+
+        // iterator
+        Iterator<String> iterator = jedis.hkeys("user").iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
 
     }
 }
