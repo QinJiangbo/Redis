@@ -21,6 +21,16 @@ public class MapOfRedis {
         jedis.hmset("user", map);
 
         // hash map get
-        System.out.println(jedis.hmget("user", "name"));
+        System.out.println(jedis.hmget("user", "name", "age"));
+        System.out.println(jedis.hlen("user"));
+
+        // hash map delete
+        jedis.hdel("user", "name", "age");
+
+        // hash map judge
+        System.out.println(jedis.hmget("user", "name", "age"));
+        System.out.println(jedis.hexists("user", "name"));
+        System.out.println(jedis.hlen("user"));
+
     }
 }
