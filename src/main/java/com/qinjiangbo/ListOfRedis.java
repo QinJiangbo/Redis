@@ -12,5 +12,10 @@ public class ListOfRedis {
 
         jedis.del("java");
         System.out.println(jedis.lrange("java", 0, -1));
+
+        jedis.lpush("java", "spring");
+        jedis.lpush("java", "hibernate");
+        jedis.lpush("java", "jdbc");
+        System.out.println(jedis.lrange("java", 0, -1));
     }
 }
