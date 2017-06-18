@@ -11,11 +11,14 @@ public class SetOfRedis {
         Jedis jedis = new Jedis("localhost");
 
         // add objects
-        jedis.sadd("user", "Jim");
-        jedis.sadd("user", "Coco");
-        jedis.sadd("user", "Qi");
-        System.out.println(jedis.smembers("user"));
+        jedis.sadd("redisUser", "Jim");
+        jedis.sadd("redisUser", "Coco");
+        jedis.sadd("redisUser", "Qi");
+        System.out.println(jedis.smembers("redisUser"));
 
         // remove
+        jedis.srem("redisUser", "Qi");
+        System.out.println(jedis.smembers("redisUser"));
+        System.out.println(jedis.scard("redisUser"));
     }
 }
